@@ -1,3 +1,10 @@
+/**
+ * Represents a book.
+ * @constructor
+ * @param {string} title - The title of the book.
+ * @param {string} author - The author of the book.
+ */
+
 /*eslint-disable no-process-exit*/
 const got = require('got');
 const money = require('money');
@@ -58,6 +65,7 @@ const cash = async command => {
 
     convert({amount, to, from, response, loading});
   } catch (err) {
+    console.log(err);
     if (err.code === 'ENOTFOUND') {
       loading.fail(chalk.red('   Please check your internet connection.\n'));
     } else {

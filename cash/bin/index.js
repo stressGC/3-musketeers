@@ -19,4 +19,4 @@ const command = {
       : config.get('defaultTo', ['USD', 'EUR', 'GBP', 'PLN'])
 };
 
-cash(command);
+cash(command); 
