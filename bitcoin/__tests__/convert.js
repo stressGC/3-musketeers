@@ -4,40 +4,40 @@ const convert = require('..');
 const Big = require('big.js');
 
 test('should default to returning a Number', () => {
-  //convert(2, 'BTC', 'BTC');
+  expect(convert(2, 'BTC', 'BTC')).toEqual(expect.any(Number));
 });
 
 test('should return a Number', () => {
-  //convert(2, 'BTC', 'BTC', 'Number');
+  expect(convert(2, 'BTC', 'BTC', 'Number')).toEqual(expect.any(Number));
 });
 
 test('should return a Big number', () => {
-  //convert(2, 'BTC', 'BTC', 'Big');
+  expect(convert(2, 'BTC', 'BTC', 'Big')).toEqual(expect.any(Big));
 });
 
 test('should return a String', () => {
-  //convert(2100, 'mBTC', 'BTC', 'String');
+  expect(convert(2100, 'mBTC', 'BTC', 'String')).toEqual(expect.any(String));
 });
 
 test('should convert an integer', () => {
-  //convert(123456789012345, 'Satoshi', 'BTC', 'Number');
+  expect(convert(123456789012345, 'Satoshi', 'BTC', 'Number')).toBeDefined();
 });
 
 test('should convert a number', () => {
-  //convert(1234567.89012345, 'BTC', 'Satoshi', 'Number');
+  expect(convert(1234567.89012345, 'BTC', 'Satoshi', 'Number')).toBeDefined();
 });
 
 test('should convert a string', () => {
-  //convert('2', 'BTC', 'BTC', 'Number');
+  expect(convert('2', 'BTC', 'BTC', 'Number')).toBeDefined();
 });
 
 test('should convert a Big number', () => {
-  //convert(new Big(2), 'BTC', 'BTC', 'Number');
+  expect(convert(new Big(2), 'BTC', 'BTC', 'Number')).toBeDefined();
 });
 
 test('should convert a NaN to a Number', () => {
-  //convert(NaN, 'BTC', 'BTC', 'Number');
-  //convert(NaN, 'BTC', 'mBTC', 'Number');
+  expect(convert(NaN, 'BTC', 'BTC', 'Number')).toEqual(expect.any(Number));
+  expect(convert(NaN, 'BTC', 'mBTC', 'Number')).toEqual(expect.any(Number));
 });
 
 test('should convert a NaN to a String', () => {
